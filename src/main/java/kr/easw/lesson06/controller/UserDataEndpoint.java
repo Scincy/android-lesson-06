@@ -31,9 +31,8 @@ public class UserDataEndpoint {
         if( userDataService.RemoveUser(userID))
         {
             //TODO 성공 결과 반환
-            //return ResponseEntity.ok().body(new R);
+            return ResponseEntity.ok().body(userID);
         }
-        else ResponseEntity.badRequest().body(new ExceptionalResultDto("허용되지 않은 접근"));
-            
+        else return ResponseEntity.badRequest().body("유저 삭제 실패");
     }
 }
